@@ -153,7 +153,6 @@ import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
-  Instagram,
   Mail,
   ExternalLink,
   ChevronRight,
