@@ -276,7 +276,7 @@ export default function Portfolio() {
                   alt="Profile"
                   width={300}
                   height={300}
-                  className="rounded grayscale hover:grayscale-0 transition-all"
+                  className="rounded lg:grayscale lg:hover:grayscale-0 transition-all"
                 />
                 <div className="absolute w-[300px] inset-0 border-2 border-[#64ffda] rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"></div>
               </div>
