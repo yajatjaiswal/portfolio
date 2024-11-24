@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -12,7 +13,18 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      writingMode: {
+        "vertical-rl": "vertical-rl",
+        "horizontal-tb": "horizontal-tb",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }: { addUtilities: (utilities: Record<string, Record<string, string>>) => void }) {
+      addUtilities({
+        '.writing-vertical-rl': { 'writing-mode': 'vertical-rl' },
+        '.writing-horizontal-tb': { 'writing-mode': 'horizontal-tb' },
+      });
+    }),
+  ],
 } satisfies Config;

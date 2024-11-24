@@ -1,152 +1,3 @@
-// "use client";
-// import React, { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-// import { Code, Laptop, GitBranch, Linkedin, Mail, MapPin } from "lucide-react";
-
-// const skills = [
-//   "JavaScript",
-//   "TypeScript",
-//   "ReactJS",
-//   "Redux-Toolkit",
-//   "NodeJS",
-//   "NestJS",
-//   "GraphQL",
-//   "Tailwind",
-//   "AWS",
-// ];
-
-// const projects = [
-//   {
-//     name: "Asset Management Tool",
-//     description:
-//       "Cloud-based asset management tool for tracking, auditing, and managing assets",
-//     technologies: ["ReactJS", "NestJS", "AWS", "Tailwind"],
-//   },
-//   {
-//     name: "Job Matching Platform",
-//     description:
-//       "Job recruitment platform connecting job seekers with employers",
-//     technologies: ["ReactJS", "Tailwind"],
-//   },
-//   {
-//     name: "E-Commerce Platform",
-//     description: "Global retailer platform for athletic footwear and apparel",
-//     technologies: ["ReactJS", "Redux", "SCSS"],
-//   },
-// ];
-
-// export default function Portfolio() {
-//   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-//   const [cursorColor, setCursorColor] = useState("bg-blue-500");
-
-//   useEffect(() => {
-//     const handleMouseMove = (e: any) => {
-//       setCursorPosition({ x: e.clientX, y: e.clientY });
-
-//       // Dynamic color change based on cursor position
-//       const colors = [
-//         "bg-blue-500",
-//         "bg-green-500",
-//         "bg-purple-500",
-//         "bg-red-500",
-//         "bg-indigo-500",
-//       ];
-//       const randomColor = colors[Math.floor(Math.random() * colors.length)];
-//       setCursorColor(randomColor);
-//     };
-
-//     window.addEventListener("mousemove", handleMouseMove);
-//     return () => window.removeEventListener("mousemove", handleMouseMove);
-//   }, []);
-
-//   return (
-//     <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
-//       {/* Cursor Background Effect */}
-//       <motion.div
-//         className={`absolute w-48 h-48 rounded-full opacity-50 blur-3xl ${cursorColor} transform -translate-x-1/2 -translate-y-1/2 pointer-events-none`}
-//         style={{
-//           left: cursorPosition.x,
-//           top: cursorPosition.y,
-//         }}
-//         animate={{
-//           scale: [1, 1.2, 1],
-//           opacity: [0.5, 0.7, 0.5],
-//         }}
-//         transition={{
-//           duration: 2,
-//           repeat: Infinity,
-//         }}
-//       />
-
-//       <div className="container mx-auto px-4 py-16 relative z-10">
-//         {/* Header */}
-//         <header className="text-center mb-16">
-//           <h1 className="text-5xl font-bold mb-4">Yajat Jaiswal</h1>
-//           <p className="text-xl text-gray-300">Associate Software Engineer</p>
-//         </header>
-
-//         {/* Contact */}
-//         <div className="flex justify-center space-x-4 mb-12">
-//           <a href="mailto:yajat.jswl@gmail.com" className="flex items-center">
-//             <Mail className="mr-2" /> yajat.jswl@gmail.com
-//           </a>
-//           <a
-//             href="https://linkedin.com"
-//             target="_blank"
-//             className="flex items-center"
-//           >
-//             <Linkedin className="mr-2" /> LinkedIn
-//           </a>
-//           <div className="flex items-center">
-//             <MapPin className="mr-2" /> Indore, India
-//           </div>
-//         </div>
-
-//         {/* Skills */}
-//         <section className="mb-12">
-//           <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
-//           <div className="flex flex-wrap justify-center gap-4">
-//             {skills.map((skill) => (
-//               <span
-//                 key={skill}
-//                 className="bg-gray-800 px-4 py-2 rounded-full text-sm"
-//               >
-//                 {skill}
-//               </span>
-//             ))}
-//           </div>
-//         </section>
-
-//         {/* Projects */}
-//         <section className="mb-12">
-//           <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
-//           <div className="grid md:grid-cols-3 gap-6">
-//             {projects.map((project) => (
-//               <div
-//                 key={project.name}
-//                 className="bg-gray-800 p-6 rounded-lg hover:scale-105 transition-transform"
-//               >
-//                 <h3 className="text-xl font-bold mb-3">{project.name}</h3>
-//                 <p className="text-gray-300 mb-4">{project.description}</p>
-//                 <div className="flex flex-wrap gap-2">
-//                   {project.technologies.map((tech) => (
-//                     <span
-//                       key={tech}
-//                       className="bg-gray-700 px-2 py-1 rounded-full text-xs"
-//                     >
-//                       {tech}
-//                     </span>
-//                   ))}
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </section>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -158,6 +9,8 @@ import {
   ChevronRight,
   Menu,
   X,
+  PhoneCall,
+  Download,
 } from "lucide-react";
 import Image from "next/image";
 import ProfileImage from "../../public/Yajat_pic.jpg";
@@ -193,7 +46,7 @@ const projects = [
     tech: ["ReactJS", "NestJS", "AWS", "Tailwind"],
     links: {
       github: "#",
-      external: "#",
+      external: "https://www.assetpanda.com/",
     },
   },
   {
@@ -203,7 +56,7 @@ const projects = [
     tech: ["ReactJS", "Tailwind"],
     links: {
       github: "#",
-      external: "#",
+      external: "https://www.scoutr.team/",
     },
   },
   {
@@ -213,23 +66,26 @@ const projects = [
     tech: ["ReactJS", "Redux", "SCSS", "Node.js", "Jest"],
     links: {
       github: "#",
-      external: "#",
+      external: "https://www.footlocker.co.in/",
     },
   },
 ];
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("about");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      const navbar = document.querySelector("nav");
+
       if (window.scrollY > lastScrollY) {
         setIsVisible(false); // Scrolling Down
+        navbar?.classList.remove("shadow-xl");
       } else {
         setIsVisible(true); // Scrolling Up
+        navbar?.classList.add("shadow-xl");
       }
       setLastScrollY(window.scrollY);
     };
@@ -248,32 +104,13 @@ export default function Portfolio() {
   return (
     <div className="bg-[#0a192f] text-[#8892b0] min-h-screen">
       {/* Navigation */}
-      {/* <nav className="fixed w-full px-6 py-4 bg-[#0a192f]/90 backdrop-blur-sm z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="text-[#64ffda] font-mono">YJ</div>
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link, i) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-mono hover:text-[#64ffda] transition-colors"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: i * 0.1 }}
-              >
-                <span className="text-[#64ffda]">{i + 1}.</span> {link.name}
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </nav> */}
       <nav
         className={`fixed w-full px-6 py-4 bg-[#0a192f]/90 backdrop-blur-sm z-50 transition-transform duration-300 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="text-[#64ffda] font-mono">
+          <a href="#hero-section" className="text-[#64ffda] font-mono">
             <Image
               src={logo}
               alt="Profile"
@@ -281,7 +118,7 @@ export default function Portfolio() {
               height={44}
               className="rounded  transition-all"
             />
-          </div>
+          </a>
           {/* Hamburger Icon for Mobile */}
           <div className="md:hidden">
             {isMenuOpen ? (
@@ -300,7 +137,7 @@ export default function Portfolio() {
           <div
             className={`${
               isMenuOpen ? "flex" : "hidden"
-            } md:flex flex-col md:flex-row md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-[#0a192f] md:bg-transparent`}
+            } md:flex flex-col md:flex-row md:space-x-8 md:mt-0 mt-4 md:pb-0 pb-4 absolute md:static top-16 left-0 w-full md:w-auto bg-[#0a192f] md:bg-transparent`}
           >
             {navLinks.map((link, i) => (
               <motion.a
@@ -318,7 +155,6 @@ export default function Portfolio() {
           </div>
         </div>
       </nav>
-      ;
       <main className="max-w-6xl mx-auto px-6  pt-12">
         <div className="fixed left-8 bottom-16 hidden lg:flex flex-col items-center gap-6">
           <a
@@ -351,10 +187,10 @@ export default function Portfolio() {
         </div>
 
         {/* Email */}
-        <div className="fixed right-8 bottom-16 hidden lg:flex flex-col items-center gap-20">
+        <div className="fixed right-8 bottom-16 hidden lg:flex flex-col items-center gap-6">
           <a
             href="mailto:yajat.jswl@gmail.com"
-            className="rotate-90 text-[#8892b0] hover:text-[#64ffda] transition"
+            className="writing-vertical-rl text-[#8892b0] hover:text-[#64ffda] transition"
           >
             yajat.jswl@gmail.com
           </a>
@@ -363,6 +199,7 @@ export default function Portfolio() {
 
         {/* Hero Section */}
         <motion.section
+          id="hero-section"
           className="min-h-screen flex flex-col justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -380,13 +217,23 @@ export default function Portfolio() {
             experiences. Currently, I'm focused on building accessible,
             human-centered products at Webkorps Services.
           </p>
-          <a
-            href="/Yajat-Jaiswal-CV.pdf"
-            download="Yajat_Jaiswal_Resume"
-            className="flex items-center justify-center border w-[10%] border-[#64ffda] text-[#64ffda] px-7 py-4 rounded hover:bg-[#64ffda]/10 transition-colors"
-          >
-            Resume
-          </a>
+          <div className="flex items-center justify-center lg:justify-normal">
+            <a
+              href="/Yajat-Jaiswal-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border lg:w-[10%] border-[#64ffda] text-[#64ffda] px-7 py-4 rounded-tl rounded-bl  hover:bg-[#64ffda]/10 transition-colors"
+            >
+              Resume
+            </a>
+            <a
+              href="/Yajat-Jaiswal-CV.pdf"
+              download="Yajat_Jaiswal_Resume"
+              className="flex items-center justify-center border border-[#64ffda] text-[#64ffda] p-4 rounded-tr rounded-br hover:bg-[#64ffda]/10 transition-colors"
+            >
+              <Download />
+            </a>
+          </div>
         </motion.section>
 
         {/* About Section */}
@@ -473,7 +320,7 @@ export default function Portfolio() {
         <section id="projects" className="py-24">
           <h2 className="flex items-center text-2xl font-bold text-[#ccd6f6] mb-8">
             <span className="text-[#64ffda] font-mono mr-2">03.</span>
-            Some Things I've Built
+            Some Things I've Worked on
           </h2>
           <div className="space-y-10">
             {projects.map((project, index) => (
@@ -504,15 +351,10 @@ export default function Portfolio() {
                       <li key={tech}>{tech}</li>
                     ))}
                   </ul>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.links.github}
-                      className="text-[#ccd6f6] hover:text-[#64ffda]"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
+                  <div className="flex">
                     <a
                       href={project.links.external}
+                      target="_blank"
                       className="text-[#ccd6f6] hover:text-[#64ffda]"
                     >
                       <ExternalLink className="w-5 h-5" />
@@ -525,7 +367,10 @@ export default function Portfolio() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24">
+        <section
+          id="contact"
+          className="flex flex-col justify-between lg:items-start items-center gap-8 py-24"
+        >
           <h2 className="text-2xl font-bold text-[#ccd6f6] ">
             <span className="text-[#64ffda] font-mono mr-2">04.</span>
             What's Next?
@@ -544,21 +389,51 @@ export default function Portfolio() {
           >
             Say Hello
           </a>
-          <div className="pt-4 ">
+
+          {/* Number of Author */}
+          {/* <div className="pt-4 flex flex-col gap-2">
             <span className="number">+91 79878-83945</span>
 
             <div
-              className="inline-block border border-[#64ffda] text-[#64ffda] px-7 py-4 rounded hover:bg-[#64ffda]/10 transition-colors"
+              className="flex items-center justify-center gap-4 border border-[#64ffda] text-[#64ffda] py-4 rounded hover:bg-[#64ffda]/10 transition-colors"
               onClick={handleCall}
             >
-              <i className="fa fa-phone"></i>
+              <PhoneCall width={16} height={16} />
               <span className="text">Call Now</span>
             </div>
-          </div>
+          </div> */}
         </section>
       </main>
       {/* Footer */}
-      <footer className="py-6 text-center font-mono text-sm">
+      <footer className="py-6 text-center font-mono text-sm flex flex-col gap-4">
+        <div className="lg:hidden flex items-center justify-center gap-4">
+          <a
+            href="https://github.com/YajatJaiswal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github
+              className="text-[#8892b0] hover:text-[#64ffda] transition"
+              size={24}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yajat-jaiswal-57266b202/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin
+              className="text-[#8892b0] hover:text-[#64ffda] transition"
+              size={24}
+            />
+          </a>
+          <a href="mailto:yajat.jswl@gmail.com">
+            <Mail
+              className="text-[#8892b0] hover:text-[#64ffda] transition"
+              size={24}
+            />
+          </a>
+        </div>
         <p>Built by Yajat Jaiswal</p>
       </footer>
     </div>
