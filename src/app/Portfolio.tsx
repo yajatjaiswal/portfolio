@@ -385,7 +385,7 @@ export default function Portfolio() {
           </p>
           <a
             href="mailto:yajat.jswl@gmail.com"
-            className="inline-block border border-[#64ffda] text-[#64ffda] px-7 py-4 rounded hover:bg-[#64ffda]/10 transition-colors"
+            className="inline-block lg:w-0 w-[44%] text-center border border-[#64ffda] text-[#64ffda] px-7 py-4 rounded hover:bg-[#64ffda]/10 transition-colors"
           >
             Say Hello
           </a>
