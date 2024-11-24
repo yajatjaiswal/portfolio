@@ -378,7 +378,7 @@ export default function Portfolio() {
           <h3 className="text-4xl md:text-5xl font-bold text-[#ccd6f6] ">
             Get In Touch
           </h3>
-          <p className="max-w-md ">
+          <p className="max-w-md lg:text-start text-center">
             I'm currently looking for new opportunities. Whether you have a
             question or just want to say hi, I'll try my best to get back to
             you!
